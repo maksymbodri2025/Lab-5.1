@@ -1,0 +1,25 @@
+﻿#include <iostream> 
+#include <cmath> 
+using namespace std;
+double k(const double x, const double y);  // прототип 
+int main()
+{
+    double p, q;
+
+    cout << "p = "; cin >> p;
+    cout << "q = "; cin >> q;
+
+    double k_part1 = k(p + sqrt(q), q - sqrt(p));
+    double k_part2 = pow(k_part1, 2);
+   
+    double c = k_part2;
+
+    cout << "c = " << c << endl;
+
+    return 0;
+}
+
+double k(const double x, const double y)  // визначення 
+{
+    return (x / abs(x * x * x + y * y * y) + y / abs(x + y));
+}
