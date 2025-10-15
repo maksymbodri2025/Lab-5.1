@@ -12,7 +12,7 @@ int main()
     double k_part1 = k(p + sqrt(q), q - sqrt(p));
     double k_part2 = pow(k_part1, 2);
    
-    double c = k_part2;
+    double c = k_part2 - k(1, p + q);
 
     cout << "c = " << c << endl;
 
@@ -21,5 +21,5 @@ int main()
 
 double k(const double x, const double y)  // визначення 
 {
-    return (x / abs(x * x * x + y * y * y) + y / abs(x + y));
+    return (x / abs(pow(x, 3) + pow(y, 3)) + y / abs(x + y));
 }
